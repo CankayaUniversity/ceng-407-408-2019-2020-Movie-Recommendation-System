@@ -57,6 +57,8 @@ def post_list(request):
 
 def recommend(request):
     df = pd.read_csv(r'C:\Users\Kaan\Desktop\django_blog\blog\movie_dataset.csv')
+    data = pd.read_csv(r'C:\Users\Kaan\Desktop\django_blog\blog\main.csv' , encoding='latin1')
+
     features = ['keywords', 'cast', 'genres', 'director']
 
     def combine_features(row):
@@ -91,8 +93,53 @@ def recommend(request):
         if i > 10:
             break
 
+    if len(data[data.Title == movies[0]].Poster.values) == 0:
+        link1 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link1 = data[data.Title == movies[0]].Poster.values[0]
+
+    if len(data[data.Title == movies[1]].Poster.values) == 0:
+        link2 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link2 = data[data.Title == movies[1]].Poster.values[0]
+
+    if len(data[data.Title == movies[2]].Poster.values) == 0:
+        link3 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link3 = data[data.Title == movies[2]].Poster.values[0]
+
+    if len(data[data.Title == movies[3]].Poster.values) == 0:
+        link4 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link4 = data[data.Title == movies[3]].Poster.values[0]
+
+    if len(data[data.Title == movies[4]].Poster.values) == 0:
+        link5 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link5 = data[data.Title == movies[4]].Poster.values[0]
+
+    if len(data[data.Title == movies[5]].Poster.values) == 0:
+        link6 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link6 = data[data.Title == movies[5]].Poster.values[0]
+
+    if len(data[data.Title == movies[6]].Poster.values) == 0:
+        link7 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link7 = data[data.Title == movies[6]].Poster.values[0]
+
+    if len(data[data.Title == movies[7]].Poster.values) == 0:
+        link8 = 'https://as2.ftcdn.net/jpg/01/23/50/75/500_F_123507588_WM22wAfkxrFwuNzHvxejP3AxnQTGCvIY.jpg'
+    else:
+        link8 = data[data.Title == movies[7]].Poster.values[0]
+
+
+
+
     return JsonResponse(data={'movie1': movies[0], 'movie2': movies[1], 'movie3': movies[2]
-        , 'movie4': movies[3], 'movie5': movies[4], 'movie6': movies[5], 'movie7': movies[6], 'movie8': movies[7]})
+        , 'movie4': movies[3], 'movie5': movies[4], 'movie6': movies[5], 'movie7': movies[6], 'movie8': movies[7],
+                              'link1':link1,'link2':link2,'link3':link3,'link4':link4,'link5':link5,'link6':link6,
+                              'link7': link7,'link8':link8,})
 
 
 def movie_page(request):

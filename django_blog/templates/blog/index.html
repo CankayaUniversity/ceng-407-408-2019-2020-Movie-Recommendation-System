@@ -95,27 +95,38 @@ a:hover {
     border-top-right-radius: 10px;
 }
 
-.manOfSteel {
-  background: url("http://henrycavill.org/images/Films/2013-Man-of-Steel/posters/3-Walmart-Superman-a.jpg");
+.bgImage1 {
+    background-size: cover;
+
+}
+.bgImage2 {
+  background-size: cover;
+}
+.bgImage3 {
   background-size: cover;
 }
 
-.babyDriver {
-  background: url("https://i0.wp.com/media2.slashfilm.com/slashfilm/wp/wp-content/images/baby-driver-poster.jpg");
-  background-size: cover;
+.bgImage4 {
+    background-size: cover;
 }
 
-.theDarkTower {
-  background: url("http://cdn.collider.com/wp-content/uploads/2017/03/the-dark-tower-poster.jpg");
-  background-size: cover;
-  background-position: 100% 100%;
+.bgImage5 {
+    background-size: cover;
 }
 
-.bladeRunner2049 {
-  background: url("http://cdn.collider.com/wp-content/uploads/2017/05/blade-runner-2049-poster-ryan-gosling.jpeg");
-  background-size: cover;
-  background-position: 100% 80%;
+.bgImage6 {
+    background-size: cover;
 }
+
+.bgImage7 {
+    background-size: cover;
+}
+
+.bgImage8 {
+    background-size: cover;
+}
+
+
 
 .header-icon-container {
   position: relative;
@@ -245,11 +256,31 @@ a:hover {
 
     function searchMovie() {
         var movie = $("#movie_name").val();
-        console.log(movie);
         $.get('{% url 'recommend' %}' , {movie_name:movie , csrfmiddlewaretoken: '{{ csrf_token }}'}).done(function(data){
-            console.log(data);
 
             $("#movie1").val(data.movie1);
+            $("#bgImage1").css("background-image" , "url(" + data.link1 + ")");
+
+            $("#movie2").val(data.movie2);
+            $("#bgImage2").css("background-image" , "url(" + data.link2 + ")");
+
+            $("#movie3").val(data.movie3);
+            $("#bgImage3").css("background-image" , "url(" + data.link3 + ")");
+
+            $("#movie4").val(data.movie4);
+            $("#bgImage4").css("background-image" , "url(" + data.link4 + ")");
+
+            $("#movie5").val(data.movie5);
+            $("#bgImage5").css("background-image" , "url(" + data.link5 + ")");
+
+            $("#movie6").val(data.movie6);
+            $("#bgImage6").css("background-image" , "url(" + data.link6 + ")");
+
+            $("#movie7").val(data.movie7);
+            $("#bgImage7").css("background-image" , "url(" + data.link7 + ")");
+
+            $("#movie8").val(data.movie8);
+            $("#bgImage8").css("background-image" , "url(" + data.link8 + ")");
         });
 
 
@@ -262,7 +293,7 @@ a:hover {
 
     <div class="row-kaan">
         <div class="movie-card">
-            <div class="movie-header manOfSteel">
+            <div class="movie-header" id = "bgImage1">
                     <form action="{% url 'movie_page' %}" method="post">
                         {% csrf_token %}
                         <input type="submit" class="submit_movie" style="color:transparent;background-color: transparent;border: none">
@@ -299,7 +330,7 @@ a:hover {
         </div><!--movie-card-->
 
         <div class="movie-card">
-            <div class="movie-header babyDriver">
+            <div class="movie-header" id = "bgImage2">
                 <div class="header-icon-container">
                 </div>
             </div><!--movie-header-->
@@ -332,7 +363,7 @@ a:hover {
         </div><!--movie-card-->
 
         <div class="movie-card">
-            <div class="movie-header theDarkTower">
+            <div class="movie-header" id = "bgImage3">
                 <div class="header-icon-container">
                 </div>
             </div><!--movie-header-->
@@ -365,7 +396,7 @@ a:hover {
         </div><!--movie-card-->
 
         <div class="movie-card">
-            <div class="movie-header bladeRunner2049">
+            <div class="movie-header" id = "bgImage4">
                 <div class="header-icon-container">
                 </div>
             </div><!--movie-header-->
@@ -401,7 +432,7 @@ a:hover {
 
 <div class="row-kaan">
         <div class="movie-card">
-            <div class="movie-header bladeRunner2049">
+            <div class="movie-header" id = "bgImage5">
                 <div class="header-icon-container">
                 </div>
             </div><!--movie-header-->
@@ -434,7 +465,7 @@ a:hover {
         </div><!--movie-card-->
 
         <div class="movie-card">
-            <div class="movie-header bladeRunner2049">
+            <div class="movie-header" id = "bgImage6">
                 <div class="header-icon-container">
                 </div>
             </div><!--movie-header-->
@@ -467,7 +498,7 @@ a:hover {
         </div><!--movie-card-->
 
         <div class="movie-card">
-            <div class="movie-header bladeRunner2049">
+            <div class="movie-header" id = "bgImage7" >
                 <div class="header-icon-container">
                 </div>
             </div><!--movie-header-->
@@ -500,7 +531,7 @@ a:hover {
         </div><!--movie-card-->
 
         <div class="movie-card">
-            <div class="movie-header bladeRunner2049">
+            <div class="movie-header" id = "bgImage8" >
                 <div class="header-icon-container">
                 </div>
             </div><!--movie-header-->
