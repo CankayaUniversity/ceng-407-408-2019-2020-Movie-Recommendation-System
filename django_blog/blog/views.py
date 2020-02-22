@@ -77,7 +77,7 @@ def recommend(request):
     def get_index_from_title(title):
         return df[df.title == title]["index"].values[0]
 
-    movie_user_likes = request.POST['movie_name']
+    movie_user_likes = request.GET['movie_name']
     movie_index = get_index_from_title(movie_user_likes)
     similar_movies = list(enumerate(cosine_sim[movie_index]))
 
@@ -91,7 +91,7 @@ def recommend(request):
         if i > 10:
             break
 
-    return render(request, 'blog/index.html', context={'movie1': movies[0], 'movie2': movies[1], 'movie3': movies[2]
+    return JsonResponse(data={'movie1': movies[0], 'movie2': movies[1], 'movie3': movies[2]
         , 'movie4': movies[3], 'movie5': movies[4], 'movie6': movies[5], 'movie7': movies[6], 'movie8': movies[7]})
 
 

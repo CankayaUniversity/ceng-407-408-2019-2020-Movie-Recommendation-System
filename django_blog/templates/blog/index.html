@@ -1,5 +1,7 @@
 <html>
   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -228,11 +230,32 @@ a:hover {
 {#</ul>#}
 
 
-<form action="{% url 'recommend' %}" method="post">
+<div class="">
     {% csrf_token %}
-    <input type="text" name="movie_name" placeholder="Enter a movie name">
-    <input type="submit">
-</form>
+    <input type="text" name="movie_name" id="movie_name" placeholder="Enter a movie name">
+    <input type="button" onclick="searchMovie()" placeholder="Submit" >
+
+</div>
+
+<script>
+
+    $( document ).ready(function() {
+            alert('Kaan');
+        });
+
+    function searchMovie() {
+        var movie = $("#movie_name").val();
+        console.log(movie);
+        $.get('{% url 'recommend' %}' , {movie_name:movie , csrfmiddlewaretoken: '{{ csrf_token }}'}).done(function(data){
+            console.log(data);
+
+            $("#movie1").val(data.movie1);
+        });
+
+
+    }
+
+</script>
 
 
 <div class="container">
@@ -243,7 +266,7 @@ a:hover {
                     <form action="{% url 'movie_page' %}" method="post">
                         {% csrf_token %}
                         <input type="submit" class="submit_movie" style="color:transparent;background-color: transparent;border: none">
-                        <input type="text"style="height:80px;background-color:transparent;border:none;font-weight: bold;overflow-wrap:break-word "  name="movie__1" value="{{movie1}}">
+                        <input type="text"style="height:80px;background-color:transparent;border:none;font-weight: bold;overflow-wrap:break-word "  name="movie__1" id="movie1">
                     </form>
                 <div class="header-icon-container">
 
