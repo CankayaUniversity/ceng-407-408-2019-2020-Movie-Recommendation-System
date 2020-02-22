@@ -251,7 +251,32 @@ a:hover {
 <script>
 
     $( document ).ready(function() {
-            alert('Kaan');
+            $.get('{% url 'post_list' %}' , {csrfmiddlewaretoken: '{{ csrf_token }}'}).done(function(){
+
+            $("#movie1").val('{{ movie1 }}');
+            $("#bgImage1").css("background-image" , "url(" + '{{ link1 }}' + ")");
+
+            $("#movie2").val('{{ movie2 }}');
+            $("#bgImage2").css("background-image" , "url(" + '{{ link2 }}' + ")");
+
+            $("#movie3").val('{{ movie3 }}');
+            $("#bgImage3").css("background-image" , "url(" + '{{ link3 }}' + ")");
+
+            $("#movie4").val('{{ movie4 }}');
+            $("#bgImage4").css("background-image" , "url(" + '{{ link4 }}' + ")");
+
+            $("#movie5").val('{{ movie5 }}');
+            $("#bgImage5").css("background-image" , "url(" + '{{ link5 }}' + ")");
+
+            $("#movie6").val('{{ movie6 }}');
+            $("#bgImage6").css("background-image" , "url(" + '{{ link6 }}' + ")");
+
+            $("#movie7").val('{{ movie7 }}');
+            $("#bgImage7").css("background-image" , "url(" + '{{ link7 }}' + ")");
+
+            $("#movie8").val('{{ movie8 }}');
+            $("#bgImage8").css("background-image" , "url(" + '{{ link8 }}' + ")");
+        });
         });
 
     function searchMovie() {
@@ -337,7 +362,7 @@ a:hover {
             <div class="movie-content">
                 <div class="movie-content-header">
                      <form action="{% url 'movie_page' %}" method="post">
-                        <input type="text"style="background-color:transparent;border:none"  name="movie2" value="{{ movie2 }}">
+                        <input type="text"style="background-color:transparent;border:none"  name="movie2" id="movie2" value="{{ movie2 }}">
                     </form>
                     <div class="imax-logo"></div>
                 </div>
@@ -370,7 +395,7 @@ a:hover {
             <div class="movie-content">
                 <div class="movie-content-header">
                     <form action="{% url 'movie_page' %}" method="post">
-                        <input type="text"style="background-color:transparent;border:none"  name="movie3" value="{{ movie3 }}">
+                        <input type="text"style="background-color:transparent;border:none"  name="movie3" id="movie3" value="{{ movie3 }}">
                     </form>
                     <div class="imax-logo"></div>
                 </div>
@@ -403,7 +428,7 @@ a:hover {
             <div class="movie-content">
                 <div class="movie-content-header">
                    <form action="{% url 'movie_page' %}" method="post">
-                        <input type="text"style="background-color:transparent;border:none"  name="movie4" value="{{ movie4 }}">
+                        <input type="text"style="background-color:transparent;border:none"  name="movie4" id="movie4" value="{{ movie4 }}">
                     </form>
                     <div class="imax-logo"></div>
                 </div>
@@ -439,7 +464,7 @@ a:hover {
             <div class="movie-content">
                 <div class="movie-content-header">
                     <form action="{% url 'movie_page' %}" method="post">
-                        <input type="text"style="background-color:transparent;border:none"  name="movie5" value="{{ movie5 }}">
+                        <input type="text"style="background-color:transparent;border:none"  name="movie5" id="movie5" value="{{ movie5 }}">
                     </form>
                     <div class="imax-logo"></div>
                 </div>
@@ -472,7 +497,7 @@ a:hover {
             <div class="movie-content">
                 <div class="movie-content-header">
                     <form action="{% url 'movie_page' %}" method="post">
-                        <input type="text"style="background-color:transparent;border:none"  name="movie6" value="{{ movie6 }}">
+                        <input type="text"style="background-color:transparent;border:none"  name="movie6" id="movie6" value="{{ movie6 }}">
                     </form>
                     <div class="imax-logo"></div>
                 </div>
@@ -505,7 +530,7 @@ a:hover {
             <div class="movie-content">
                 <div class="movie-content-header">
                     <form action="{% url 'movie_page' %}" method="post">
-                        <input type="text"style="background-color:transparent;border:none"  name="movie7" value="{{ movie7 }}">
+                        <input type="text"style="background-color:transparent;border:none"  name="movie7" id="movie7" value="{{ movie7 }}">
                     </form>
                     <div class="imax-logo"></div>
                 </div>
@@ -538,7 +563,7 @@ a:hover {
             <div class="movie-content">
                 <div class="movie-content-header">
                     <form action="{% url 'movie_page' %}" method="post">
-                        <input type="text" style="background-color:transparent;border:none;"  name="movie8" value="{{ movie8 }}">
+                        <input type="text" style="background-color:transparent;border:none;"  name="movie8" id="movie8" value="{{ movie8 }}">
                     </form>
                     <div class="imax-logo"></div>
                 </div>
