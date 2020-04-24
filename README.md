@@ -10,7 +10,7 @@ Movie Recommendation System
 3)After installing django,download the project folder.<br><br>
 4)After opening the file, copy file path.<br><br>
 5)type "cd C:/pc/user/......./django_blog_desktop"<br><br>
-6)<h2>Libraries that should be installed:</h2>
+<h2>6)Libraries that should be installed:</h2>
   <h3>pip install pandas</h3>
   <h3>pip install numpy==1.16.1</h3><br>
 <h3>
