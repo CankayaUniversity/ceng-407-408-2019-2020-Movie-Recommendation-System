@@ -18,7 +18,9 @@ Movie Recommendation System
 8)type "python manage.py makemigrations"<br><br>
 9)type "python manage.py migrate"<br><br>
 10)type "python manage.py runserver"<br><br>
+10)Open any web browser and type "localhost:8000/blog" in order to access the Homepage.<br><br>
 </h3>
 <h2>Notes:</h2>
-<h3>If user wants to create admin account and access to the admin panel,type "python manage.py createsuperuser"
+<h3>If user wants to create an admin account, type "python manage.py createsuperuser"
+<h3>If user wants to access the admin panel, type "localhost:8000/admin"
 <h3>If user forgets the password of his/her account, they can use "Forgot Password" feature in the login page.A link will be posted to the terminal and users can change their password by using that link.
