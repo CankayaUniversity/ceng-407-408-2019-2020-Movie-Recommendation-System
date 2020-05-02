@@ -12,7 +12,12 @@ Movie Recommendation System
 5)type "cd C:/pc/user/......./django_blog_desktop"<br><br>
 <h2>6)Libraries that should be installed:</h2>
   <h3>pip install pandas</h3>
-  <h3>pip install numpy==1.16.1</h3><br>
+  <h3>pip install numpy==1.16.1</h3>
+  <h3>pip install sklearn</h3>
+  <h3>pip install statistics</h3>
+  <h3>pip install random</h3>
+  <h3>pip install collections</h3>
+  <h3>pip install math</h3>
 <h3>
 7)type "myenv\Scripts\activate"<br><br>
 8)type "python manage.py makemigrations"<br><br>
